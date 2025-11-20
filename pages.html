@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Physics Class 11 NCERT • Clean Revision</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2d3748;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 90px 20px 70px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Chapter Grid */
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        /* Card Style - Clean & Premium */
+        .chapter-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .chapter-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .chapter-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #4361ee;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(67,97,238,0.3);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #4361ee, #3f37c9);
+            color: white;
+            padding: 35px 25px 25px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 30px 25px;
+            text-align: center;
+        }
+        .card-body p {
+            color: #555;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+
+        .formulas {
+            background: #f0f4ff;
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 5px solid #4361ee;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            color: #2d3748;
+            font-size: 0.98rem;
+            line-height: 1.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #4361ee;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(67,97,238,0.3);
+        }
+        .btn:hover {
+            background: #3a56d4;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(67,97,238,0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            color: #555;
+            margin-top: 60px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.4rem; }
+            .chapter-grid { grid-template-columns: 1fr; }
+            .chapter-number { width: 50px; height: 50px; font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Physics Class 11</h1>
+        <p>Complete NCERT Summary • Formulas • Quick Revision Notes</p>
+    </header>
+
+    <div class="container">
+        <div class="chapter-grid">
+
+            <!-- All 14 Chapters -->
+            <div class="chapter-card">
+                <div class="chapter-number">1</div>
+                <div class="card-header">Units and Measurements</div>
+                <div class="card-body">
+                    <p>Fundamental & derived units • Dimensional analysis • Errors • Instruments</p>
+                    <div class="formulas">
+                        • % Error = (Δx/x)×100<br>
+                        • [Mᵃ Lᵇ Tᶜ] • Least count
+                    </div>
+                    <a href="1.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-number">2</div>
+                <div class="card-header">Motion in a Straight Line</div>
+                <div class="card-body">
+                    <p>Speed • Velocity • Acceleration • Kinematic equations</p>
+                    <div class="formulas">
+                        • v = u + at<br>• s = ut + ½at²<br>• v² = u² + 2as
+                    </div>
+                    <a href="2.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-number">3</div>
+                <div class="card-header">Motion in a Plane</div>
+                <div class="card-body">
+                    <p>Vectors • Projectile motion • Circular motion</p>
+                    <div class="formulas">
+                        • R = u²sin2θ/g<br>• H = u²sin²θ/2g
+                    </div>
+                    <a href="3.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-number">4</div>
+                <div class="card-header">Laws of Motion</div>
+                <div class="card-body">
+                    <p>Newton’s laws • Friction • Conservation of momentum</p>
+                    <div class="formulas">
+                        • F = ma<br>• f ≤ μN<br>• Impulse = Δp
+                    </div>
+                    <a href="4.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-number">5</div>
+                <div class="card-header">Work, Energy and Power</div>
+                <div class="card-body">
+                    <p>Work • Kinetic & Potential energy • Conservation law</p>
+                    <div class="formulas">
+                        • W = Fs cosθ<br>• KE = ½mv²<br>• PE = mgh
+                    </div>
+                    <a href="5.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-number">6</div>
+                <div class="card-header">System of Particles & Rotational Motion</div>
+                <div class="card-body">
+                    <p>Centre of mass • Torque • Moment of inertia</p>
+                    <div class="formulas">
+                        • τ = Iα<br>• L = Iω
+                    </div>
+                    <a href="6.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-number">7</div>
+                <div class="card-header">Gravitation</div>
+                <div class="card-body">
+                    <p>Universal law • g • Orbital velocity • Escape velocity</p>
+                    <div class="formulas">
+                        • F = GMm/r²<br>• vₑ = √(2GM/R)
+                    </div>
+                    <a href="7.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-number">8</div>
+                <div class="card-header">Mechanical Properties of Solids</div>
+                <div class="card-body">
+                    <p>Stress • Strain • Modulus of Elasticity • Types</p>
+                    <div class="formulas">
+                        • <br>• vₑ = √(2GM/R)
+                    </div>
+                    <a href="8.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">9</div>
+                <div class="card-header">Mechanical Properties of Fluids</div>
+                <div class="card-body">
+                    <p>Universal law • g • Orbital velocity • Escape velocity</p>
+                    <div class="formulas">
+                        • F = GMm/r²<br>• vₑ = √(2GM/R)
+                    </div>
+                    <a href="9.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">10</div>
+                <div class="card-header">Thermal Properties of Matter</div>
+                <div class="card-body">
+                    <p>Universal law • g • Orbital velocity • Escape velocity</p>
+                    <div class="formulas">
+                        • F = GMm/r²<br>• vₑ = √(2GM/R)
+                    </div>
+                    <a href="10.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">11</div>
+                <div class="card-header">Thermodynamics</div>
+                <div class="card-body">
+                    <p>Universal law • g • Orbital velocity • Escape velocity</p>
+                    <div class="formulas">
+                        • F = GMm/r²<br>• vₑ = √(2GM/R)
+                    </div>
+                    <a href="11.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-number">12</div>
+                <div class="card-header">Kinetic Theory of Gases</div>
+                <div class="card-body">
+                    <p>Universal law • g • Orbital velocity • Escape velocity</p>
+                    <div class="formulas">
+                        • F = GMm/r²<br>• vₑ = √(2GM/R)
+                    </div>
+                    <a href="12.html" class="btn">Open Chapter</a>
+                </div>
+            <div class="chapter-card">
+                <div class="chapter-number">13</div>
+                <div class="card-header">Oscillations</div>
+                <div class="card-body">
+                    <p>Universal law • g • Orbital velocity • Escape velocity</p>
+                    <div class="formulas">
+                        • F = GMm/r²<br>• vₑ = √(2GM/R)
+                    </div>
+                    <a href="13.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-number">14</div>
+                <div class="card-header">Waves</div>
+                <div class="card-body">
+                    <p>Wave motion • Sound • Doppler effect • Standing waves</p>
+                    <div class="formulas">
+                        • v = fλ<br>• f' = f (v ± v₀)/(v ∓ vₛ)
+                    </div>
+                    <a href="14.html" class="btn">Open Chapter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Physics Class 11 • Made with Love by Rishabh</p>
+        <p>Simple • Clean • Effective Revision</p>
+    </footer>
+
+</body>
+</html>
