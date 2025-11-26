@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Simulations</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* FLOATING BACKGROUND PHYSICS SHAPES */
+        .floating {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.4;
+            animation: float 12s infinite linear;
+            font-size: 28px;
+            color: #4ca3ff;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-120vh) rotate(360deg);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.07);
+            /* more transparent */
+            backdrop-filter: blur(8px);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .content {
+            display: none;
+            padding: 15px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Physics Simulations</h1>
+
+    <!-- TEMPLATE FOR CARDS WITH DROPDOWN -->
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Buoyancy</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/buoyancy/latest/buoyancy_en.html" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="floating">
+        <div class="shape" style="left:5%; animation-duration:14s;">⚛️</div>
+        <div class="shape" style="left:20%; animation-duration:10s;">➕</div>
+        <div class="shape" style="left:35%; animation-duration:16s;">▲</div>
+        <div class="shape" style="left:50%; animation-duration:12s;">⚡</div>
+        <div class="shape" style="left:65%; animation-duration:18s;">➗</div>
+        <div class="shape" style="left:75%; animation-duration:11s;">⚙️</div>
+        <div class="shape" style="left:88%; animation-duration:13s;">∿</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Projectile Data Lab</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/projectile-data-lab/latest/projectile-data-lab_en.html"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Kepler's Laws</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/keplers-laws/latest/keplers-laws_en.html"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Calculus Grapher</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/calculus-grapher/latest/calculus-grapher_en.html"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Density</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/density/latest/density_en.html" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Collision Lab</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/collision-lab/latest/collision-lab_en.html"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Gravity Force Lab Basics</div>
+        <div class="content">
+            <iframe
+                src="https://phet.colorado.edu/sims/html/gravity-force-lab-basics/latest/gravity-force-lab-basics_en.html"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Coulomb's Law</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_en.html"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Projectile Motion</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_en.html"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Friction</div>
+        <div class="content">
+            <iframe src="https://phet.colorado.edu/sims/html/friction/latest/friction_en.html" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+        <div class="title">Forces and Motion</div>
+        <div class="content">
+            <iframe
+                src="https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_en.html"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function toggle(card) {
+            const content = card.querySelector(".content");
+            const isOpen = content.style.display === "block";
+            content.style.display = isOpen ? "none" : "block";
+        }
+    </script>
+
+</body>
+
+</html>
