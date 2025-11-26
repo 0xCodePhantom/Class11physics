@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class 11 Physics — Chapter 2: Motion in a Straight Line</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #9aa7bf;
+            --accent: #6ee7b7;
+            --accent-2: #7dd3fc;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-2: rgba(255, 255, 255, 0.02);
+            --radius: 16px;
+            --mono: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #071023 120%);
+            font-family: var(--mono);
+            color: #e6eef8
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .logo {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            width: 62px;
+            height: 62px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #042;
+            font-weight: 800;
+            box-shadow: 0 6px 26px rgba(3, 6, 23, 0.6)
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0
+        }
+
+        header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 22px;
+            margin-top: 18px
+        }
+
+        article.card {
+            background: linear-gradient(180deg, var(--card), #061022 140%);
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+            overflow: hidden
+        }
+
+        .chapter-title {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .chapter-meta {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        h2 {
+            margin: 14px 0 8px;
+            font-size: 20px
+        }
+
+        h3 {
+            margin: 12px 0 8px;
+            font-size: 18px
+        }
+
+        p {
+            color: #d8e6fb;
+            line-height: 1.6
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 10px;
+            overflow: auto
+        }
+
+        .section {
+            padding: 12px 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.03)
+        }
+
+        .note {
+            background: linear-gradient(90deg, rgba(125, 211, 252, 0.06), rgba(110, 231, 183, 0.03));
+            border-left: 4px solid rgba(125, 211, 252, 0.18);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--muted)
+        }
+
+        .formula {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .example {
+            background: var(--glass-2);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .toc {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .toc li {
+            margin: 10px 0
+        }
+
+        .toc a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        footer {
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center
+        }
+
+        @media (max-width:980px) {
+            main {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: relative;
+                margin-top: 8px
+            }
+        }
+
+        .kbd {
+            background: #031225;
+            padding: 6px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .diagram {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            margin: 12px 0;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+            padding: 16px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PH</div>
+            <div>
+                <h1>Class 11 Physics — <span style="color:var(--accent)">Chapter 2</span> — Motion in a Straight Line
+                </h1>
+                <p class="chapter-meta">Deep, exam-focused notes • graphs • equations of motion • solved numericals •
+                    quick revision</p>
+            </div>
+        </header>
+
+        <main>
+            <article class="card" id="content">
+
+                <!-- Introduction -->
+                <section class="section" id="intro">
+                    <div class="chapter-title">
+                        <h2>Introduction — Kinematics in One Dimension</h2>
+                    </div>
+                    <p class="lead">This chapter deals with the description of motion along a straight line (rectilinear
+                        motion). We study position, displacement, velocity, acceleration, and the famous three equations
+                        of motion for constant acceleration. Mastering graphs and sign convention is the key to scoring
+                        full marks in this chapter.</p>
+
+                    <div class="note">
+                        <strong>Pro Tip:</strong> Always choose a positive direction (usually to the right). Stick to it
+                        throughout the problem. Most sign-related mistakes happen because of inconsistent conventions.
+                    </div>
+                </section>
+
+                <!-- 1. Basic Definitions -->
+                <section class="section" id="definitions">
+                    <h3>1. Key Definitions</h3>
+                    <pre>Position (x)          → location of particle w.r.t. chosen origin
+Displacement (Δx)      → change in position = x₂ – x₁ (vector)
+Distance               → total path length (scalar)
+Speed                  → rate of distance covered (scalar)
+Velocity (v)           → rate of change of displacement (vector)
+Average velocity       → Δx / Δt
+Instantaneous velocity → dx/dt = limit Δt→0 (Δx/Δt)
+Acceleration (a)       → rate of change of velocity = dv/dt (vector)</pre>
+
+                    <div class="formula">v_avg = (v_initial + v_final)/2 (only when acceleration is constant)</div>
+                </section>
+
+                <!-- 2. Equations of Motion (Constant Acceleration) -->
+                <section class="section" id="equations">
+                    <h3>2. Equations of Motion for Constant Acceleration</h3>
+                    <p>These three equations are the backbone of the chapter. Memorize them with their standard symbols:
+                    </p>
+
+                    <div class="formula">
+                        v = u + at<br>
+                        s = ut + ½ at²<br>
+                        v² = u² + 2as<br><br>
+                        sₙₜₕ = u + a/2 (2n-1) (displacement in nth second)
+                    </div>
+
+                    <div class="note">u → initial velocity<br>v → final velocity<br>a → acceleration<br>t → time<br>s →
+                        displacement</div>
+
+                    <h4>Quick derivation reminder (using calculus)</h4>
+                    <pre>a = dv/dt  ⇒  v = u + at
+v = ds/dt  ⇒  s = ∫v dt = ut + ½ at²
+Eliminate t → v² = u² + 2as</pre>
+                </section>
+
+                <!-- 3. Graphical Analysis -->
+                <section class="section" id="graphs">
+                    <h3>3. Motion Graphs — Must Know</h3>
+                    <p>Graphs are heavily tested in exams. Remember:</p>
+                    <ul>
+                        <li>Slope of <strong>x-t graph</strong> → velocity</li>
+                        <li>Slope of <strong>v-t graph</strong> → acceleration</li>
+                        <li>Area under <strong>v-t graph</strong> → displacement</li>
+                        <li>Area under <strong>a-t graph</strong> → change in velocity</li>
+                    </ul>
+
+                    <div class="note">Constant acceleration → v-t graph is a straight line<br>
+                        Uniform motion → x-t graph is straight line (constant slope = constant velocity)</div>
+                </section>
+
+                <!-- 4. Relative Motion in 1D -->
+                <section class="section" id="relative">
+                    <h3>4. Relative Velocity in One Dimension</h3>
+                    <p>If two objects A and B are moving along the same line:</p>
+                    <div class="formula">v_A,B = v_A – v_B</div>
+                    <p>Sign convention is critical here.</p>
+
+                    <div class="example">
+                        <strong>Example:</strong> A car moving at 20 m/s east overtakes a truck moving at 12 m/s
+                        east.<br>
+                        Relative velocity of car w.r.t. truck = 20 – 12 = <strong>8 m/s</strong> (towards east).
+                    </div>
+                </section>
+
+                <!-- 5. Free Fall & Motion under Gravity -->
+                <section class="section" id="freefall">
+                    <h3>5. Motion under Gravity (Free Fall)</h3>
+                    <p>Take downward direction as positive when object is falling.</p>
+                    <pre>u = 0 (if dropped)
+a = g = 9.8 m/s² ≈ 10 m/s² (often used in problems)
+Maximum height (when thrown up): v = 0 at top
+Time of flight (thrown up): t = 2u/g</pre>
+
+                    <div class="note">Velocity when it returns to same height = –u (magnitude same, direction opposite)
+                    </div>
+                </section>
+
+                <!-- 6. Important Solved Numericals -->
+                <section class="section" id="worked-examples">
+                    <h3>6. Important Worked Examples (Exam-Level)</h3>
+
+                    <div class="examples">
+
+                        <div class="example">
+                            <strong>Q1:</strong> A body starts from rest and moves with acceleration 4 m/s² for 5 s.
+                            Find final velocity and distance covered.
+                            <p>u = 0, a = 4 m/s², t = 5 s<br>
+                                v = u + at = 0 + 4×5 = <strong>20 m/s</strong><br>
+                                s = ut + ½at² = 0 + ½×4×25 = <strong>50 m</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q2:</strong> A ball is thrown upward with 30 m/s. Find (i) max height (ii) time of
+                            flight (g=10 m/s²).
+                            <p>At max height, v = 0<br>
+                                v² = u² + 2as ⇒ 0 = 900 – 2×10×h ⇒ h = <strong>45 m</strong><br>
+                                Total time = 2u/g = 2×30/10 = <strong>6 s</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q3:</strong> A train accelerates from 36 km/h to 72 km/h in 10 s. Find acceleration
+                            and distance.
+                            <p>First convert: 36 km/h = 10 m/s, 72 km/h = 20 m/s<br>
+                                a = (20-10)/10 = <strong>1 m/s²</strong><br>
+                                s = ut + ½at² = 10×10 + ½×1×100 = <strong>150 m</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q4 (Graph-based):</strong> A particle moves with constant velocity 10 m/s for 4 s,
+                            then decelerates at 2 m/s² till rest. Find total distance.
+                            <p>Time to stop: v = u + at ⇒ 0 = 10 – 2t ⇒ t = 5 s<br>
+                                Distance in first 4 s = 10×4 = 40 m<br>
+                                Distance in next 5 s = (10²)/(2×2) = 25 m<br>
+                                Total = <strong>65 m</strong></p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 7. Practice Questions -->
+                <section class="section" id="practice">
+                    <h3>7. Practice Questions (Try First!)</h3>
+                    <ol>
+                        <li>A stone is dropped from a tower 80 m high. How long does it take to reach ground? (g=10
+                            m/s²)</li>
+                        <li>A car moving at 54 km/h stops in 5 s. Find retardation and stopping distance.</li>
+                        <li>From v-t graph: velocity increases linearly from 0 to 20 m/s in 4 s, remains constant for 6
+                            s, then decreases to zero in 4 s. Find total displacement.</li>
+                        <li>A body covers 40 m in 4th second and 60 m in 6th second. Find initial velocity and
+                            acceleration.</li>
+                    </ol>
+
+                    <p class="muted">(Short answers): 1) 4 s  2) 3 m/s², 37.5 m  3) 200 m  4) u = 10 m/s, a = 10 m/s²
+                    </p>
+                </section>
+
+                <!-- 8. Quick Reference Formulas -->
+                <section class="section" id="quick-ref">
+                    <h3>8. Quick Reference — All Formulas</h3>
+                    <pre>
+v = u + at
+s = ut + ½ at²
+v² = u² + 2as
+sₙ = u + a/2 (2n–1)
+Relative velocity: v_A,B = v_A – v_B
+For projectile thrown vertically up:
+H_max = u²/(2g)  T_total = 2u/g
+                    </pre>
+                </section>
+
+                <!-- 9. Exam Tips & FAQs -->
+                <section class="section" id="faqs">
+                    <h3>9. Exam Tips & Common Mistakes</h3>
+                    <ul>
+                        <li>Never forget to convert km/h → m/s (multiply by 5/18)</li>
+                        <li>While taking g = 10 m/s², be consistent throughout the question</li>
+                        <li>In relative motion, if both objects move in same direction, subtract velocities</li>
+                        <li>Always check whether the question asks for distance or displacement</li>
+                        <li>For stopping problems, final velocity v = 0</li>
+                    </ul>
+                </section>
+
+                <footer>
+                    <p>Revision complete! Save as PDF or screenshot for quick recap before exam.</p>
+                </footer>
+
+            </article>
+
+            <!-- Sidebar TOC -->
+            <aside class="sidebar">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <strong>Contents</strong>
+                    <span class="muted">Jump to</span>
+                </div>
+                <ul class="toc">
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#definitions">Key Definitions</a></li>
+                    <li><a href="#equations">Equations of Motion</a></li>
+                    <li><a href="#graphs">Motion Graphs</a></li>
+                    <li><a href="#relative">Relative Velocity</a></li>
+                    <li><a href="#freefall">Free Fall</a></li>
+                    <li><a href="#worked-examples">Worked Examples</a></li>
+                    <li><a href="#practice">Practice Questions</a></li>
+                    <li><a href="#quick-ref">Formula Sheet</a></li>
+                    <li><a href="#faqs">Tips & FAQs</a></li>
+                </ul>
+
+                <div style="margin-top:20px" class="note">
+                    <strong>Exam Checklist</strong>
+                    <ul style="margin:6px 0 0 16px;color:var(--muted);font-size:14px">
+                        <li>Correct sign convention</li>
+                        <li>Units conversion</li>
+                        <li>Distinguish distance vs displacement</li>
+                        <li>Check graph slopes & areas</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+
+</html>
