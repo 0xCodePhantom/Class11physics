@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Physics Platform</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            color: white;
+            background: #0c0c0c;
+            overflow-x: hidden;
+        }
+
+        /* Animated Gradient BG */
+        .bg-animated {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(130deg, #4c00ff, #0011ff, #0099ff, #00d4ff);
+            background-size: 400% 400%;
+            animation: gmove 10s ease infinite;
+            opacity: 0.25;
+            z-index: -1;
+        }
+
+        @keyframes gmove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Containers */
+        .section {
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 50px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+            animation: fadeUp 1s ease;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            transition: 0.4s ease;
+        }
+
+        /* Headings */
+        .card h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            font-size: 26px;
+            margin: 30px 0 12px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            opacity: .85;
+        }
+
+        /* Paragraphs */
+        .card p {
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+
+        /* Highlight */
+        .highlight {
+            color: #4cbfff;
+            font-weight: 600;
+        }
+
+        /* Links Row */
+        .links {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Info Boxes */
+        .info-boxes {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .info-item {
+            padding: 25px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Contact Buttons */
+        .contacts {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contacts a {
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .contacts a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                padding: 35px;
+            }
+
+            .card h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-animated"></div>
+
+    <section class="section">
+        <div class="card">
+
+            <h1>About This Platform</h1>
+            <h3>Modern. Clean. Built For Class 11 Physics.</h3>
+
+            <p>
+                This website helps students understand physics the smart way.
+                No outdated notes. No messy pages. Just clear concepts with visuals,
+                animations and a <span class="highlight">smooth learning experience</span>.
+            </p>
+
+            <p>
+                Our goal is simple:
+                Make physics easy and enjoyable for every student, no matter their level.
+            </p>
+
+
+            <!-- Mission -->
+            <h2>Our Mission</h2>
+            <p>
+                To provide high-quality physics content that is organised,
+                visually appealing and easy to revise. Everything is designed
+                with students in mind.
+            </p>
+
+            <!-- Vision -->
+            <h2>Our Vision</h2>
+            <p>
+                A platform where physics feels like exploring how the world works,
+                not just memorising formulas.
+            </p>
+
+            <!-- Info Boxes -->
+            <h2>What You’ll Find Here</h2>
+
+            <div class="info-boxes">
+                <div class="info-item">
+                    <h3>Clean Notes</h3>
+                    <p>Each chapter has simple, neat notes designed to help you understand faster.</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Interactive Elements</h3>
+                    <p>Graphs, animations and visuals to help you actually see how physics works.</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Revision Tools</h3>
+                    <p>MCQs, formula sheets and quick summaries to help you revise smarter.</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Exam Support</h3>
+                    <p>Handpicked questions and past papers to prepare with confidence.</p>
+                </div>
+            </div>
+
+
+            <!-- Creator Section -->
+            <h2>About the Creator</h2>
+            <p>
+                This platform is created and maintained Rishabh,
+                a student and developer passionate about building
+                clean platforms that help others learn better.
+            </p>
+
+
+            <!-- Contact -->
+            <h2>Connect With Us</h2>
+
+            <div class="contacts">
+                <a href="https://t.me/deve_lopers">Telegram</a>
+                <a href="https://whatsapp.com/channel/0029Vb67nwrFCCoY9N9oBi2t">WhatsApp</a>
+                <a href="https://www.instagram.com/developers_nagaji/#">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61584026251451">Facebook</a>
+                <a
+                    href="https://www.linkedin.com/in/developers-team-devlopers-563526392?utm_source=share_via&utm_content=profile&utm_medium=member_android">LinkedIn</a>
+                <a href="developersinthehouse@gmail.com">Email</a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
