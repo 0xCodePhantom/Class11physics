@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class 11 Physics — Chapter 1: Units & Measurement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1724;
+            /* deep navy */
+            --card: #0b1220;
+            --muted: #9aa7bf;
+            --accent: #6ee7b7;
+            /* mint */
+            --accent-2: #7dd3fc;
+            /* sky */
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-2: rgba(255, 255, 255, 0.02);
+            --radius: 16px;
+            --mono: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #071023 120%);
+            font-family: var(--mono);
+            color: #e6eef8
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .logo {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            width: 62px;
+            height: 62px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #042;
+            font-weight: 800;
+            box-shadow: 0 6px 26px rgba(3, 6, 23, 0.6)
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0
+        }
+
+        header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            background: var(--glass);
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.04)
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 22px;
+            margin-top: 18px
+        }
+
+        /* Left column (content) */
+        article.card {
+            background: linear-gradient(180deg, var(--card), #061022 140%);
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+            overflow: hidden
+        }
+
+        .chapter-title {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .chapter-meta {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        h2 {
+            margin: 14px 0 8px;
+            font-size: 20px
+        }
+
+        h3 {
+            margin: 12px 0 8px;
+            font-size: 18px
+        }
+
+        p {
+            color: #d8e6fb;
+            line-height: 1.6
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 10px;
+            overflow: auto
+        }
+
+        .section {
+            padding: 12px 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.03)
+        }
+
+        .note {
+            background: linear-gradient(90deg, rgba(125, 211, 252, 0.06), rgba(110, 231, 183, 0.03));
+            border-left: 4px solid rgba(125, 211, 252, 0.18);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--muted);
+        }
+
+        .formula {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .example {
+            background: var(--glass-2);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        /* Right column (sidebar) */
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .toc {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .toc li {
+            margin: 10px 0
+        }
+
+        .toc a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        footer {
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center
+        }
+
+        /* responsive */
+        @media (max-width:980px) {
+            main {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: relative;
+                margin-top: 8px
+            }
+        }
+
+        /* subtle utility classes */
+        .kbd {
+            background: #031225;
+            padding: 6px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        /* illustrative SVG diagram styling */
+        .diagram {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            margin: 12px 0;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+            padding: 16px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PH</div>
+            <div>
+                <h1>Class 11 Physics — <span style="color:var(--accent)">Chapter 1</span> — Units &amp; Measurement</h1>
+                <p class="chapter-meta">Deep, exam-focused notes • examples • solved problems • visual aids</p>
+            </div>
+        </header>
+
+        <main>
+            <article class="card" id="content">
+
+                <!-- Introduction -->
+                <section class="section" id="intro">
+                    <div class="chapter-title">
+                        <h2>Introduction — What is Measurement?</h2>
+                    </div>
+
+                    <p class="lead">Measurement is the language of physics. We describe physical quantities by assigning
+                        numbers to them using agreed standards (units) and methods. This chapter builds the foundations:
+                        types of quantities, units, dimensions, errors and significant figures — all the practical tools
+                        you need to make, scale and reason about measurements.</p>
+
+                    <div class="note">
+                        <strong>Why this matters:</strong> Every physical law uses consistent units. Mistakes in units
+                        are the most common source of errors in experiments and numerical problems. Learn to convert,
+                        estimate, and track dimensions early — it saves time and avoids silly mistakes later.
+                    </div>
+
+                    <p style="margin-top:10px;">This file has been structured to be both readable and actionable:
+                        conceptual explanations, worked examples, practice questions, and quick-reference tables. Use
+                        the table of contents in the sidebar to jump to any part of the chapter.</p>
+                </section>
+
+                <!-- 1. Physical quantities -->
+                <section class="section" id="physical-quantities">
+                    <h3>1. Physical Quantities: Base &amp; Derived</h3>
+                    <p>Physical quantities describe measurable aspects of the physical world. They fall into two broad
+                        categories:</p>
+                    <ol>
+                        <li><strong>Base quantities</strong>: chosen by convention (e.g., length, mass, time, electric
+                            current, thermodynamic temperature, amount of substance, luminous intensity). In SI, there
+                            are seven base quantities.</li>
+                        <li><strong>Derived quantities</strong>: combinations of base quantities (e.g., speed =
+                            length/time, force = mass &times; acceleration).</li>
+                    </ol>
+
+                    <div class="note">Memorize the seven SI base quantities and their units — they're used everywhere. A
+                        quick mnemonic: <em>Length, Mass, Time, Current, Temperature, Amount, Light</em>.</div>
+
+                    <h4>SI base quantities and units (concise table)</h4>
+                    <pre>Length (L) — metre (m)
+Mass (M) — kilogram (kg)
+Time (T) — second (s)
+Electric current (I) — ampere (A)
+Temperature (Θ) — kelvin (K)
+Amount of substance (N) — mole (mol)
+Luminous intensity (J) — candela (cd)</pre>
+
+                    <p>Notation: In dimensional analysis we use L, M, T, I, Θ, N, J (or sometimes simply L,M,T...). When
+                        writing dimensions we use square brackets, e.g., [velocity] = [L T<sup>-1</sup>].</p>
+
+                    <div class="formula">Example: Area = length &times; length &rarr; [Area] = L<sup>2</sup></div>
+                </section>
+
+                <!-- 2. Units, standards and prefixes -->
+                <section class="section" id="units">
+                    <h3>2. Units, Standards and SI Prefixes</h3>
+                    <p>Units are standardized references for measurement. SI (Système International) is the modern
+                        standard system used in science. Important: prefixes change the scale of units. Learn the common
+                        prefixes and their powers of ten.</p>
+
+                    <h4>Common SI prefixes</h4>
+                    <pre>kilo (k)  = 10<sup>3</sup>
+centi (c) = 10<sup>-2</sup>
+milli (m) = 10<sup>-3</sup>
+micro (µ)  = 10<sup>-6</sup>
+nano (n)   = 10<sup>-9</sup>
+mega (M)   = 10<sup>6</sup>
+Giga (G)   = 10<sup>9</sup>
+</pre>
+
+                    <p class="note">Tip: Instead of memorizing too many prefixes, practice converting everyday values —
+                        grams, metres, milliseconds. Intuition grows fast when you use magnitudes in examples.</p>
+
+                    <h4>Unit conversion — worked example</h4>
+                    <div class="examples">
+                        <div class="example">
+                            <strong>Q:</strong> Convert 5.4 km to metres.
+                            <div class="muted">Solution</div>
+                            <p>1 km = 1000 m, so 5.4 km = 5.4 &times; 1000 = 5400 m.</p>
+                        </div>
+                        <div class="example">
+                            <strong>Q:</strong> Convert 1200 ms to seconds.
+                            <div class="muted">Solution</div>
+                            <p>1000 ms = 1 s, so 1200 ms = 1.2 s.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Dimensional analysis -->
+                <section class="section" id="dimensional-analysis">
+                    <h3>3. Dimensional Analysis</h3>
+                    <p>Dimensional analysis is a powerful method to check equations for consistency, deduce
+                        relationships, and convert between units. Always check the dimensions of both sides of an
+                        equation.</p>
+
+                    <h4>Rules</h4>
+                    <ul>
+                        <li>Only quantities with the same dimensions can be added or subtracted.</li>
+                        <li>Dimensions must match on both sides of a physically valid equation.</li>
+                        <li>Use dimensions to find the form of an equation when the constants are unknown (up to
+                            dimensionless numbers).</li>
+                    </ul>
+
+                    <div class="example">
+                        <strong>Example:</strong> Check if s = ut + 1/2 at<sup>2</sup> is dimensionally consistent.
+                        <p>Left side: [s] = L.
+                            Right side: [ut] = [L T<sup>-1</sup> &times; T] = L; [at<sup>2</sup>] = [L T<sup>-2</sup>
+                            &times; T<sup>2</sup>] = L. Both terms are length — consistent.</p>
+                    </div>
+
+                    <h4>Common dimensional formulas</h4>
+                    <pre>Velocity: [v] = L T^-1
+Acceleration: [a] = L T^-2
+Force: [F] = M L T^-2
+Energy: [E] = M L^2 T^-2
+Pressure: [P] = M L^-1 T^-2</pre>
+
+                    <p class="note">Dimensional analysis cannot determine dimensionless constants (like 2, π, e) nor the
+                        exact numerical factors; it only gives the form of relations.</p>
+                </section>
+
+                <!-- 4. Measurement errors & uncertainties -->
+                <section class="section" id="errors">
+                    <h3>4. Errors, Uncertainty &amp; Significant Figures</h3>
+                    <p>No measurement is perfect. Understanding and reporting uncertainty is crucial.</p>
+
+                    <h4>Types of errors</h4>
+                    <ul>
+                        <li><strong>Systematic errors</strong>: reproducible biases (e.g., zero error, calibration
+                            error). They shift measurements consistently.</li>
+                        <li><strong>Random errors</strong>: statistical fluctuations due to measurement limitations
+                            (e.g., reading a needle scale).</li>
+                        <li><strong>Gross errors</strong>: mistakes/accidents (recording wrong value) — ideally
+                            avoidable.</li>
+                    </ul>
+
+                    <h4>Absolute &amp; Relative error</h4>
+                    <p><strong>Absolute error:</strong> the uncertainty in the units of the quantity, Δx.</p>
+                    <p><strong>Relative error:</strong> Δx/x — often expressed as a percentage: (Δx/x) &times; 100%.</p>
+
+                    <div class="example">
+                        <strong>Q:</strong> A length is measured as 2.30 m ± 0.02 m. Calculate relative error.
+                        <p>Relative error = 0.02/2.30 ≈ 0.008695 &rarr; 0.8695%.</p>
+                    </div>
+
+                    <h4>Propagation of errors (basic rules)</h4>
+                    <p>When combining measured quantities, use approximate propagation formulas:</p>
+                    <ul>
+                        <li><em>Addition/Subtraction:</em> Absolute errors add. If z = x ± y, Δz ≈ Δx + Δy.</li>
+                        <li><em>Multiplication/Division:</em> Relative errors add. If z = x &times; y or z = x/y, (Δz/z)
+                            ≈ (Δx/x) + (Δy/y).</li>
+                        <li><em>Power:</em> If z = x<sup>n</sup>, (Δz/z) ≈ |n| (Δx/x).</li>
+                    </ul>
+
+                    <div class="note">These are first-order approximations (valid when errors are small). For more
+                        accuracy use partial derivatives (general method): Δf ≈ Σ |(∂f/∂x<sub>i</sub>)| Δx<sub>i</sub>.
+                    </div>
+                </section>
+
+                <!-- 5. Significant figures -->
+                <section class="section" id="sigfigs">
+                    <h3>5. Significant Figures &amp; Rounding</h3>
+                    <p>Significant figures show the precision of a measurement. Rules:
+                    <ul>
+                        <li>Non-zero digits are always significant.</li>
+                        <li>Zeros between non-zero digits are significant.</li>
+                        <li>Leading zeros are not significant.</li>
+                        <li>Trailing zeros are significant if there is a decimal point.</li>
+                    </ul>
+                    </p>
+
+                    <div class="example">
+                        <strong>Q:</strong> How many significant figures are in 0.00320?
+                        <p>Answer: 3 significant figures (3, 2, and trailing 0 after the decimal).</p>
+                    </div>
+
+                    <p class="note">When performing calculations, keep one extra guard digit during intermediate steps
+                        and round the final answer to the correct number of significant figures.</p>
+                </section>
+
+                <!-- 6. Standards & calibration -->
+                <section class="section" id="standards">
+                    <h3>6. Standards, Calibration &amp; Instruments</h3>
+                    <p>Precision depends on the instrument. Always choose an instrument with resolution fine enough for
+                        your measurement. Common instruments and their typical resolutions:</p>
+                    <ul>
+                        <li>Meter scale (tape) &mdash; mm to cm</li>
+                        <li>Vernier caliper &mdash; 0.01 cm (~0.1 mm) typical</li>
+                        <li>Micrometer &mdash; 0.001 cm (~0.01 mm)</li>
+                        <li>Stopwatch &mdash; 0.01 s typical (digital)</li>
+                    </ul>
+
+                    <h4>Zero error</h4>
+                    <p>If an instrument reads a non-zero value when it should read zero (e.g., vernier caliper jaws
+                        closed), correct your measurement by subtracting the zero error.</p>
+
+                    <div class="example">
+                        <strong>Q:</strong> Vernier reads 2.35 cm but zero error is +0.02 cm. True value?
+                        <p>Corrected value = 2.35 - 0.02 = 2.33 cm.</p>
+                    </div>
+                </section>
+
+                <!-- 7. Practical examples and solved problems -->
+                <section class="section" id="worked-examples">
+                    <h3>7. Worked Examples (Detailed)</h3>
+
+                    <div class="examples">
+                        <div class="example">
+                            <strong>Example 1:</strong> A car travels 360 km in 4 hours. What is its average speed in
+                            m/s?
+                            <p>360 km = 360,000 m. 4 hours = 14,400 s. Speed = 360,000 / 14,400 = 25 m/s.</p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Example 2:</strong> Dimensional analysis to find the period T of a simple pendulum
+                            depends on length l and gravitational acceleration g. Use dimensions to show T ∝ sqrt(l/g).
+                            <p>Assume T = k l<sup>a</sup> g<sup>b</sup>. Dimensions: [T] = T, [l] = L, [g] = L
+                                T<sup>-2</sup>.
+                                Equate: T = L<sup>a</sup> (L T<sup>-2</sup>)<sup>b</sup> = L<sup>a+b</sup>
+                                T<sup>-2b</sup>. So exponents: for T: 1 = -2b ⇒ b = -1/2. For L: 0 = a + b ⇒ a = -b =
+                                1/2. So T ∝ l<sup>1/2</sup> g<sup>-1/2</sup> ⇒ T ∝ sqrt(l/g).
+                            </p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Example 3 (Error propagation):</strong> Area of rectangle A = l &times; w.
+                            Measurements: l = 12.0 ± 0.1 cm; w = 8.0 ± 0.1 cm. Find A and its uncertainty.
+                            <p>A = 96.0 cm<sup>2</sup>. Relative errors: (Δl/l)=0.1/12.0 = 0.00833; (Δw/w)=0.1/8 =
+                                0.0125. Relative error in A ≈ 0.00833 + 0.0125 = 0.02083 ⇒ ΔA ≈ 96.0 &times; 0.02083 ≈
+                                2.00 cm<sup>2</sup>. So A = 96.0 ± 2.0 cm<sup>2</sup>.</p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Example 4 (Unit conversion trick):</strong> Convert 72 km/h to m/s quickly.
+                            <p>72 km/h = 72 &times; (1000 m)/(3600 s) = 72 &times; (1/3.6) ≈ 20 m/s.</p>
+                        </div>
+
+                    </div>
+
+                    <p class="note">More worked examples are helpful — try to replicate each method, then apply to
+                        slightly altered inputs to test mastery.</p>
+                </section>
+
+                <!-- 8. Practice questions -->
+                <section class="section" id="practice">
+                    <h3>8. Practice Questions</h3>
+                    <p>Try these — answers appear if you click <span class="kbd">Show Answers</span> (or ask me to
+                        reveal them):</p>
+                    <ol>
+                        <li>Convert 0.00045 kg to mg.</li>
+                        <li>Check dimensional consistency of E = 1/2 mv<sup>2</sup> + mgh.</li>
+                        <li>A measurement 5.67 &plusmn; 0.02 m and another 3.4 &plusmn; 0.05 m are added. Find the
+                            result and uncertainty.</li>
+                        <li>Using dimensional analysis, propose the dependence of drag force on velocity and area
+                            (assume air density ρ also matters).</li>
+                    </ol>
+
+                    <p class="muted">(Answers — in short): 1) 450 mg; 2) both terms give energy
+                        (ML<sup>2</sup>T<sup>-2</sup>); 3) 9.07 ± 0.07 (add absolute errors); 4) F ∝ ρ v<sup>2</sup> A
+                        (up to a dimensionless constant).</p>
+                </section>
+
+                <!-- 9. Quick reference -->
+                <section class="section" id="quick-ref">
+                    <h3>9. Quick Reference</h3>
+                    <div class="formula">Common conversions &amp; formulas at a glance:</div>
+                    <pre>
+1 km = 1000 m
+1 m = 100 cm
+1 cm = 10 mm
+1 hour = 3600 s
+1 N = 1 kg m s^-2
+1 J = 1 N m = 1 kg m^2 s^-2
+</pre>
+                </section>
+
+                <!-- 10. FAQs & tips -->
+                <section class="section" id="faqs">
+                    <h3>10. FAQs &amp; Study Tips</h3>
+                    <ul>
+                        <li><strong>How to remember SI prefixes?</strong> Group them in thousands: (k, M, G) and
+                            sub-thousand (m, µ, n). Practice with real numbers like 0.001 m, 0.000001 m.</li>
+                        <li><strong>Should I memorize dimensional formulas?</strong> Memorize a few (force, energy,
+                            pressure) and derive the rest by combining base dimensions.</li>
+                        <li><strong>Exam tip:</strong> Always include units in answers and keep at least two significant
+                            figures unless asked otherwise.</li>
+                    </ul>
+                </section>
+
+                <footer>
+                    <p>Made for revision — click <strong>Download PDF</strong> or request "export to PDF" to save
+                        offline.</p>
+                </footer>
+
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <strong>Contents</strong>
+                    <span class="muted">Jump to</span>
+                </div>
+                <ul class="toc">
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#physical-quantities">Physical Quantities</a></li>
+                    <li><a href="#units">Units & Prefixes</a></li>
+                    <li><a href="#dimensional-analysis">Dimensional Analysis</a></li>
+                    <li><a href="#errors">Errors & Uncertainty</a></li>
+                    <li><a href="#sigfigs">Significant Figures</a></li>
+                    <li><a href="#standards">Standards & Instruments</a></li>
+                    <li><a href="#worked-examples">Worked Examples</a></li>
+                    <li><a href="#practice">Practice Questions</a></li>
+                    <li><a href="#quick-ref">Quick Reference</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+
+                <div style="height:12px"></div>
+                <div class="note">
+                    <strong>Exam-ready checklist:</strong>
+                    <ul style="margin:6px 0 0 18px;color:var(--muted)">
+                        <li>Write units every step</li>
+                        <li>Check dimensions for each equation</li>
+                        <li>Round only final answer</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top:12px;text-align:center">
+                    <button class="btn">Copy Link</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script>
+        // Small script to toggle answers or simple UI behaviours
+        document.querySelector('.btn.ghost').addEventListener('click', () => window.print());
+        document.querySelectorAll('.btn')[0].addEventListener('click', () => alert('PDF export not implemented in this demo. Ask me to create a downloadable PDF and I will generate it.'));
+        document.querySelectorAll('.btn')[2].addEventListener('click', () => alert('Theme toggle demo — try customizing CSS variables in the file.'));
+        document.querySelectorAll('.btn')[3].addEventListener('click', () => {
+            document.querySelectorAll('.muted').forEach(e => e.style.color = 'transparent');
+            setTimeout(() => { document.querySelectorAll('.muted').forEach(e => e.style.color = 'var(--muted)') }, 250);
+        });
+    </script>
+</body>
+
+</html>
