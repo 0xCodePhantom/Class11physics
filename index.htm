@@ -199,7 +199,9 @@
     <h1>Master Physics Effectively</h1>
     <p>Clean notes, interactive lessons, practice sheets, downloadable PDFs, assignments — everything you need to excel in Class 11 Physics.</p>
     <div>
-      <button class="btn btn-blue" id="myBtn">Explore Lessons</button>
+      <button class="btn btn-blue" id="myBtn">Explore Lessons</button>
+       <button class="btn btn-outline" id="models">Explore Models</button>
+
     </div>
   </section>
 
@@ -227,10 +229,25 @@
   </footer>
 
 <script>
-  document.getElementById("myBtn").addEventListener("click", function() {
-    window.location.href = "pages.html";
-  });
-</script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.getElementById("myBtn");
+      const models = document.getElementById("models");
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          window.location.href = "pages.html";
+        });
+      }
+
+      if (models) {
+        models.addEventListener("click", function () {
+          window.location.href = "models.html";
+        });
+      }
+    });
+  </script>
+
 
 </body>
 </html>
+
