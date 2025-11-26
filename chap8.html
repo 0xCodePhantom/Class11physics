@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class 11 Physics — Chapter 8: Mechanical Properties of Solids</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #9aa7bf;
+            --accent: #6ee7b7;
+            --accent-2: #7dd3fc;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-2: rgba(255, 255, 255, 0.02);
+            --mono: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #071023 120%);
+            font-family: var(--mono);
+            color: #e6eef8
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .logo {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            width: 62px;
+            height: 62px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #042;
+            font-weight: 800;
+            box-shadow: 0 6px 26px rgba(3, 6, 23, 0.6)
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0
+        }
+
+        header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 22px;
+            margin-top: 18px
+        }
+
+        article.card {
+            background: linear-gradient(180deg, var(--card), #061022 140%);
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+            overflow: hidden
+        }
+
+        h2 {
+            margin: 14px 0 8px;
+            font-size: 20px
+        }
+
+        h3 {
+            margin: 12px 0 8px;
+            font-size: 18px
+        }
+
+        p {
+            color: #d8e6fb;
+            line-height: 1.6
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 10px;
+            overflow: auto
+        }
+
+        .section {
+            padding: 12px 0;
+            border-top: 1px dashed rgba(255, 255, 255, 255, 0.03)
+        }
+
+        .note {
+            background: linear-gradient(90deg, rgba(125, 211, 252, 0.06), rgba(110, 231, 183, 0.03));
+            border-left: 4px solid rgba(125, 211, 252, 0.18);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--muted)
+        }
+
+        .formula {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .example {
+            background: var(--glass-2);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .toc {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .toc li {
+            margin: 10px 0
+        }
+
+        .toc a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        footer {
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center
+        }
+
+        @media(max-width:980px) {
+            main {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: relative;
+                margin-top: 8px
+            }
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PH</div>
+            <div>
+                <h1>Class 11 Physics — <span style="color:var(--accent)">Chapter 8</span> — Mechanical Properties of
+                    Solids</h1>
+                <p class="chapter-meta">Stress • strain • Hooke’s law • Young’s, Bulk & Rigidity modulus • elastic
+                    energy • solved numericals</p>
+            </div>
+        </header>
+
+        <main>
+            <article class="card">
+
+                <!-- Intro -->
+                <section class="section" id="intro">
+                    <h2>Chapter 8 — Mechanical Properties of Solids</h2>
+                    <p class="lead">Short but very very scoring chapter (6–8 marks almost every year). Just three
+                        moduli, stress-strain curve, and elastic energy — bas itna ratt lo, full marks pakke.</p>
+                    <div class="note"><strong>Board Exam Mantra:</strong> Formula of Bulk modulus aur elastic energy
+                        wala question 100 % aata hai!</div>
+                </section>
+
+                <!-- 1. Stress & Strain -->
+                <section class="section" id="stress-strain">
+                    <h3>1. Stress & Strain</h3>
+                    <pre style="font-size:15px">
+Stress  σ = Force / Area          (N/m² or Pascal)
+Strain  ε = ΔL / L  (dimensionless)
+
+Types of stress:
+   • Tensile / Compressive  → longitudinal
+   • Shear                  → tangential
+   • Hydraulic / Volumetric → pressure
+                    </pre>
+                </section>
+
+                <!-- 2. Hooke’s Law & Moduli -->
+                <section class="section" id="moduli">
+                    <h3>2. Hooke’s Law & Elastic Moduli</h3>
+                    <div class="formula" style="font-size:17px">
+                        Within elastic limit: stress ∝ strain ⇒ stress = E × strain<br><br>
+                        Young’s modulus  Y = (F/A) / (ΔL/L) = FL / (A ΔL)<br>
+                        Bulk modulus    B = –P / (ΔV/V)  (negative sign because volume decreases)<br>
+                        Rigidity modulus G = (F/A) / θ  (shear strain θ = x/l)
+                    </div>
+                    <pre>
+Relation: Y = 3B = 2G × (something) → actually Y = 2G(1+ν)G = 3(1−2ν)B
+Poisson’s ratio ν = lateral strain / longitudinal strain (0 < ν < 0.5)
+                    </pre>
+                </section>
+
+                <!-- 3. Stress-Strain Curve -->
+                <section class="section" id="curve">
+                    <h3>3. Stress-Strain Curve (Must Draw in Exam)</h3>
+                    <pre>
+Proportional limit → Hooke’s law valid
+Elastic limit      → beyond this permanent deformation
+Yield point        → plastic flow starts
+Ultimate tensile strength → max stress material can bear
+Breaking point
+                    </pre>
+                    <div class="note">Steel → large elastic region, Ductile<br>Rubber → large strain, low Young’s
+                        modulus</div>
+                </section>
+
+                <!-- 4. Elastic Potential Energy -->
+                <section class="section" id="energy">
+                    <h3>4. Elastic Potential Energy in Wire</h3>
+                    <div class="formula" style="font-size:18px">
+                        Energy stored per unit volume U = ½ × stress × strain<br>
+                        Total energy in wire U = ½ × (F × ΔL) or (½) Y (ΔL)² A / L
+                    </div>
+                </section>
+
+                <!-- 5. Solved Numericals -->
+                <section class="section" id="worked-examples">
+                    <h3>5. Favourite Board Numericals</h3>
+                    <div class="examples">
+
+                        <div class="example">
+                            <strong>Q1:</strong> Steel wire (Y=2×10¹¹ Pa) length 2 m, area 0.1 cm² stretched by 1 mm.
+                            Find force.<br>
+                            <p>Y = FL/(AΔL) ⇒ F = Y A ΔL / L = 2×10¹¹ × 10⁻⁵ × 10⁻³ / 2 = <strong>1000 N</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q2:</strong> A rubber cord volume 100 cm³ subjected to pressure 10⁶ Pa. Bulk modulus
+                            2×10⁹ Pa. Find ΔV.<br>
+                            <p>B = –P/(ΔV/V) ⇒ ΔV = –P V / B = –10⁶ × 10⁻⁴ / 2×10⁹ = <strong>–0.05 cm³</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q3:</strong> Wire stretched by 0.1%. Energy stored per unit volume if Y=2×10¹¹
+                            Pa?<br>
+                            <p>U = ½ stress × strain = ½ Y ε² = ½ × 2×10¹¹ × (0.001)² = <strong>10⁵ J/m³</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q4:</strong> Two wires same material, length ratio 1:2, area ratio 2:1. Ratio of
+                            extensions under same force?<br>
+                            <p>ΔL ∝ L/A ⇒ ratio = (L₁/L₂)×(A₂/A₁) = (1/2)×(2 = <strong>1:1</strong></p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 6. Practice -->
+                <section class="section" id="practice">
+                    <h3>6. Practice Questions</h3>
+                    <ol>
+                        <li>Steel rod (Y=2×10¹¹ Pa) diameter 1 mm bears 500 N load. Elongation if length 3 m?</li>
+                        <li>Find energy stored in a wire stretched by 0.2% (Y=10¹¹ Pa).</li>
+                        <li>Bulk modulus of water 2.2×10⁹ Pa. % decrease in volume under 100 atm pressure?</li>
+                        <li>Maximum load a copper wire (Y=1.1×10¹¹ Pa, area 1 mm²) can bear without crossing elastic
+                            limit (safe strain 0.2%).</li>
+                    </ol>
+                    <p class="muted">(Answers): 1) 2.86 mm 2) 2×10⁵ J/m³ 3) 0.463% 4) 220 N</p>
+                </section>
+
+                <!-- 7. Formula Sheet -->
+                <section class="section" id="quick-ref">
+                    <h3>7. One-Page Formula Sheet</h3>
+                    <pre style="font-size:15px">
+Y = FL / (A ΔL)  ⇒ ΔL = FL / (AY)
+B = –P V / ΔV  ⇒ ΔV = –P V / B
+G = (F/A) / θ
+Elastic energy density = ½ stress × strain = ½ Y ε²
+Work done in stretching = ½ F × ΔL
+For same material & load: ΔL ∝ L/A
+                    </pre>
+                </section>
+
+                <footer>
+                    <p>Chapter 8 complete! Short chapter, high returns — ratt lo aur 8/8 le aao.</p>
+                </footer>
+
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <strong>Contents</strong>
+                    <span class="muted">Jump</span>
+                </div>
+                <ul class="toc">
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#stress-strain">Stress & Strain</a></li>
+                    <li><a href="#moduli">Hooke’s Law & Moduli</a></li>
+                    <li><a href="#curve">Stress-Strain Curve</a></li>
+                    <li><a href="#energy">Elastic Energy</a></li>
+                    <li><a href="#worked-examples">Solved Numericals</a></li>
+                    <li><a href="#practice">Practice Set</a></li>
+                    <li><a href="#quick-ref">Formula Sheet</a></li>
+                </ul>
+
+                <div style="margin-top:20px" class="note">
+                    <strong>Score 8/8 Checklist</strong>
+                    <ul style="margin:6px 0 0 16px;font-size:14px;color:var(--muted)">
+                        <li>Young’s modulus formula</li>
+                        <li>Bulk modulus negative sign</li>
+                        <li>Energy = ½ stress × strain</li>
+                        <li>ΔL ∝ L/A</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+
+</html>

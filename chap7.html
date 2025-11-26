@@ -1,0 +1,374 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class 11 Physics — Chapter 7: Gravitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #9aa7bf;
+            --accent: #6ee7b7;
+            --accent-2: #7dd3fc;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-2: rgba(255, 255, 255, 0.02);
+            --mono: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #071023 120%);
+            font-family: var(--mono);
+            color: #e6eef8
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .logo {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            width: 62px;
+            height: 62px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #042;
+            font-weight: 800;
+            box-shadow: 0 6px 26px rgba(3, 6, 23, 0.6)
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0
+        }
+
+        header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 22px;
+            margin-top: 18px
+        }
+
+        article.card {
+            background: linear-gradient(180deg, var(--card), #061022 140%);
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+            overflow: hidden
+        }
+
+        h2 {
+            margin: 14px 0 8px;
+            font-size: 20px
+        }
+
+        h3 {
+            margin: 12px 0 8px;
+            font-size: 18px
+        }
+
+        p {
+            color: #d8e6fb;
+            line-height: 1.6
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 10px;
+            overflow: auto
+        }
+
+        .section {
+            padding: 12px 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.03)
+        }
+
+        .note {
+            background: linear-gradient(90deg, rgba(125, 211, 252, 0.06), rgba(110, 231, 183, 0.03));
+            border-left: 4px solid rgba(125, 211, 252, 0.18);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--muted)
+        }
+
+        .formula {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .example {
+            background: var(--glass-2);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .toc {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .toc li {
+            margin: 10px 0
+        }
+
+        .toc a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        footer {
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center
+        }
+
+        @media(max-width:980px) {
+            main {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: relative;
+                margin-top: 8px
+            }
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PH</div>
+            <div>
+                <h1>Class 11 Physics — <span style="color:var(--accent)">Chapter 7</span> — Gravitation</h1>
+                <p class="chapter-meta">Universal law • gravitational field & potential • acceleration due to gravity •
+                    satellites • escape velocity • Kepler’s laws • solved numericals</p>
+            </div>
+        </header>
+
+        <main>
+            <article class="card">
+
+                <!-- Intro -->
+                <section class="section" id="intro">
+                    <h2>Chapter 7 — Gravitation</h2>
+                    <p class="lead">One of the most beautiful and scoring chapters. Everything revolves around just two
+                        equations: Newton’s law of gravitation and gravitational potential energy. Master variation of
+                        g, orbital velocity, and escape velocity — 10–12 marks guaranteed.</p>
+                    <div class="note"><strong>Exam Hack:</strong> Memorise the “magic ratios” table (gₕ, T, escape
+                        velocity) — half the numericals are direct formula-based.</div>
+                </section>
+
+                <!-- 1. Universal Law -->
+                <section class="section" id="law">
+                    <h3>1. Newton’s Universal Law of Gravitation</h3>
+                    <div class="formula" style="font-size:18px;text-align:center">
+                        F = G m₁ m₂ / r²  G = 6.67 × 10⁻¹¹ N m² kg⁻²
+                    </div>
+                </section>
+
+                <!-- 2. Acceleration due to gravity -->
+                <section class="section" id="g">
+                    <h3>2. Acceleration due to Gravity (g)</h3>
+                    <pre style="font-size:15px">
+At surface          g = GM/R²
+At height h          gₕ = g (R/(R+h))² ≈ g (1 – 2h/R)   (h << R)
+At depth d           g_d = g (1 – d/R)
+At poles             gₚ > gₑ (earth is flattened)
+                    </pre>
+                    <div class="note">g decreases with height, depth, and latitude (max at poles).</div>
+                </section>
+
+                <!-- 3. Gravitational Potential & Field -->
+                <section class="section" id="potential">
+                    <h3>3. Gravitational Potential & Field</h3>
+                    <pre>
+Potential V = –GM/r
+Field     g⃗ = –GM/r² (radially inward)
+Potential energy U = –G M m / r
+                    </pre>
+                </section>
+
+                <!-- 4. Satellites & Orbital Velocity -->
+                <section class="section" id="satellite">
+                    <h3>4. Orbital & Escape Velocity</h3>
+                    <div class="formula" style="font-size:17px">
+                        Orbital velocity vₒ = √(GM/R+h) ≈ √(gR) for near earth
+                        Time period T = 2π √((R+h)³)/GM) ≈ 84 min for low orbit
+                        Escape velocity vₑ = √(2GM/R) = √(2gR) ≈ 11.2 km/s from earth
+                        Energy of satellite E = –GMm/(2r) (negative → bound)
+                    </div>
+                    <div class="note">Geostationary satellite: T = 24 h, r ≈ 42,000 km, above equator</div>
+                </section>
+
+                <!-- 5. Kepler’s Laws -->
+                <section class="section" id="kepler">
+                    <h3>5. Kepler’s Three Laws</h3>
+                    <pre>
+1. Elliptical orbit with Sun at one focus
+2. Areal velocity constant (L constant)
+3. T² ∝ r³  (T²/r³ = constant for all planets)
+                    </pre>
+                </section>
+
+                <!-- 6. Solved Numericals -->
+                <section class="section" id="worked-examples">
+                    <h3>6. Must-Do Solved Numericals (Board Favourite)</h3>
+                    <div class="examples">
+
+                        <div class="example">
+                            <strong>Q1:</strong> Find g at height equal to radius of earth (R).<br>
+                            <p>gₕ = g (R/(R+R))² = g/4 = <strong>2.45 m/s²</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q2:</strong> Escape velocity from moon is 2.4 km/s and acceleration due to gravity
+                            on moon is g/6. Find radius of moon.<br>
+                            <p>vₑ = √(2gR) ⇒ 2.4×10³ = √(2 × g/6 × R) ⇒ R = <strong>R = 1.73 × 10⁶ m</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q3:</strong> Orbital radius of geostationary satellite?<br>
+                            <p>T = 24×3600 s ⇒ r³ = GMT²/(4π²) ⇒ r ≈ <strong>42,400 km</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q4:</strong> Percentage change in g if earth stops rotating.<br>
+                            <p>At equator gₑ = g – Rω² cos²λ → gₑ ≈ 0.034 m/s² decrease<br>
+                                % change ≈ 0.34% <strong>(negligible)</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q5:</strong> Two satellites A & B, r_A : r_B = 1:8. Ratio of their time periods?<br>
+                            <p>T² ∝ r³ ⇒ T_A/T_B = (1/8)^{3/2} = 1/(8√8) = <strong>1:22.627</strong> or 1:2√2</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 7. Practice -->
+                <section class="section" id="practice">
+                    <h3>7. Practice Questions</h3>
+                    <ol>
+                        <li>Find g at a depth 1600 km (Rₑ = 6400 km).</li>
+                        <li>Escape velocity from earth surface?</li>
+                        <li>Ratio of escape velocity from surface of earth and moon if radius ratio 4:1 and density
+                            ratio 3:5.</li>
+                        <li>Time period of satellite at height 36000 km.</li>
+                    </ol>
+                    <p class="muted">(Answers): 1) 8 m/s² 2) 11.2 km/s 3) 5:2 4) 24 h</p>
+                </section>
+
+                <!-- 8. Magic Ratio Table -->
+                <section class="section" id="quick-ref">
+                    <h3>8. Quick Revision Table (Exam Saviour)</h3>
+                    <pre style="font-size:15px">
+Height/Depth | g becomes
+───────────────────────────────
+h = R/2      → g/2 * 2.25 = 2.25g/4 ≈ 0.5625g
+h = R        → g/4
+d = R/2      → g/2
+d = R        → 0
+Escape vel   → √2 × orbital vel
+Geostationary radius ≈ 6.6 Rₑ ≈ 42,000 km
+                    </pre>
+                </section>
+
+                <footer>
+                    <p>Chapter 7 done! Ab toh party double ho gayi bhai. Save kar aur chill kar.</p>
+                </footer>
+
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <strong>Contents</strong>
+                    <span class="muted">Jump</span>
+                </div>
+                <ul class="toc">
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#law">Universal Law</a></li>
+                    <li><a href="#g">Variation of g</a></li>
+                    <li><a href="#potential">Potential & Field</a></li>
+                    <li><a href="#satellite">Satellites & Escape</a></li>
+                    <li><a href="#kepler">Kepler’s Laws</a></li>
+                    <li><a href="#worked-examples">Solved Numericals</a></li>
+                    <li><a href="#practice">Practice</a></li>
+                    <li><a href="#quick-ref">Ratio Table</a></li>
+                </ul>
+
+                <div style="margin-top:20px" class="note">
+                    <strong>Score 12/12 Checklist</strong>
+                    <ul style="margin:6px 0 0 16px;font-size:14px;color:var(--muted)">
+                        <li>gₕ = g/(1 + h/R)²</li>
+                        <li>vₑ = √(2gR)</li>
+                        <li>T² ∝ r³</li>
+                        <li>Energy negative</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+
+</html>

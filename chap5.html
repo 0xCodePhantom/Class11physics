@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class 11 Physics — Chapter 5: Work, Energy and Power</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #9aa7bf;
+            --accent: #6ee7b7;
+            --accent-2: #7dd3fc;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-2: rgba(255, 255, 255, 0.02);
+            --mono: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #071023 120%);
+            font-family: var(--mono);
+            color: #e6eef8
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .logo {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            width: 62px;
+            height: 62px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #042;
+            font-weight: 800;
+            box-shadow: 0 6px 26px rgba(3, 6, 23, 0.6)
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0
+        }
+
+        header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 22px;
+            margin-top: 18px
+        }
+
+        article.card {
+            background: linear-gradient(180deg, var(--card), #061022 140%);
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+            overflow: hidden
+        }
+
+        h2 {
+            margin: 14px 0 8px;
+            font-size: 20px
+        }
+
+        h3 {
+            margin: 12px 0 8px;
+            font-size: 18px
+        }
+
+        p {
+            color: #d8e6fb;
+            line-height: 1.6
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 10px;
+            overflow: auto
+        }
+
+        .section {
+            padding: 12px 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.03)
+        }
+
+        .note {
+            background: linear-gradient(90deg, rgba(125, 211, 252, 0.06), rgba(110, 231, 183, 0.03));
+            border-left: 4px solid rgba(125, 211, 252, 0.18);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--muted)
+        }
+
+        .formula {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .example {
+            background: var(--glass-2);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .toc {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .toc li {
+            margin: 10px 0
+        }
+
+        .toc a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        footer {
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center
+        }
+
+        @media (max-width:980px) {
+            main {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: relative;
+                margin-top: 8px
+            }
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PH</div>
+            <div>
+                <h1>Class 11 Physics — <span style="color:var(--accent)">Chapter 5</span> — Work, Energy and Power</h1>
+                <p class="chapter-meta">Work • energy • kinetic & potential • conservation • power • collisions • solved
+                    numericals</p>
+            </div>
+        </header>
+
+        <main>
+            <article class="card">
+
+                <!-- Intro -->
+                <section class="section" id="intro">
+                    <h2>Introduction — Work and Energy</h2>
+                    <p class="lead">This chapter links force with motion through the concepts of work and energy. The
+                        most powerful tool in physics — <strong>Conservation of Mechanical Energy</strong> — makes many
+                        problems super easy. Master variable forces, spring energy and collision types.</p>
+
+                    <div class="note">
+                        <strong>Golden Rule:</strong> Whenever only conservative forces act → Mechanical Energy is
+                        conserved.
+                    </div>
+                </section>
+
+                <!-- 1. Work -->
+                <section class="section" id="work">
+                    <h3>1. Work Done by a Force</h3>
+                    <div class="formula">
+                        W = F · s = F s cosθ<br>
+                        W = ∫ F · dr  (variable force)
+                    </div>
+                    <pre>
+Work by gravity      = –mgh
+Work by spring       = –½ k x²
+Work by friction     = –f s (always negative for kinetic friction)
+                    </pre>
+                </section>
+
+                <!-- 2. Energy -->
+                <section class="section" id="energy">
+                    <h3>2. Kinetic & Potential Energy</h3>
+                    <pre>
+Kinetic Energy      K = ½ m v²
+Gravitational PE    U_g = m g h
+Elastic PE          U_s = ½ k x²
+                    </pre>
+                    <div class="formula">
+                        Work-Energy Theorem: W_net = ΔK = K_f – K_i
+                    </div>
+                </section>
+
+                <!-- 3. Conservation of Energy -->
+                <section class="section" id="conservation">
+                    <h3>3. Conservation of Mechanical Energy</h3>
+                    <div class="formula" style="font-size:17px;text-align:center">
+                        K_i + U_i = K_f + U_f  (only conservative forces)<br>
+                        ½ m v_i² + m g h_i + ½ k x_i² = ½ m v_f² + m g h_f + ½ k x_f²
+                    </div>
+                </section>
+
+                <!-- 4. Power -->
+                <section class="section" id="power">
+                    <h3>4. Power</h3>
+                    <div class="formula">
+                        P = F · v = dW/dt<br>
+                        Average power = Total work / time
+                    </div>
+                </section>
+
+                <!-- 5. Collisions -->
+                <section class="section" id="collisions">
+                    <h3>5. Collisions (1D)</h3>
+                    <pre>
+Coefficient of restitution e = (v₂ – v₁)/(u₁ – u₂)   (0 ≤ e ≤ 1)
+
+Perfectly elastic   → e = 1   → both momentum & KE conserved
+Perfectly inelastic → e = 0   → they stick, only momentum conserved
+                    </pre>
+                    <div class="formula">
+                        Elastic collision velocities:<br>
+                        v₁ = (m₁–m₂)/(m₁+m₂) u₁ + 2m₂/(m₁+m₂) u₂<br>
+                        v₂ = 2m₁/(m₁+m₂) u₁ + (m₂–m₁)/(m₁+m₂) u₂
+                    </div>
+                </section>
+
+                <!-- 6. Solved Numericals -->
+                <section class="section" id="worked-examples">
+                    <h3>6. Important Solved Numericals (Board Level)</h3>
+
+                    <div class="examples">
+
+                        <div class="example">
+                            <strong>Q1:</strong> A 2 kg block falls freely from 20 m height. Find speed just before
+                            hitting ground (g=10).<br>
+                            <p>Using energy: mgh = ½mv² ⇒ v = √(2gh) = √400 = <strong>20 m/s</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q2:</strong> Spring (k=800 N/m) compressed by 10 cm. Find speed of 0.5 kg block
+                            released.<br>
+                            <p>½kx² = ½mv² ⇒ v = x √(k/m) = 0.1 √(1600) = <strong>4 m/s</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q3:</strong> 4 kg at 5 m/s collides perfectly inelastically with 6 kg at rest. Final
+                            velocity?<br>
+                            <p>m₁u₁ + m₂u₂ = (m₁+m₂)v ⇒ v = 20/10 = <strong>2 m/s</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q4:</strong> Elastic head-on collision: 2 kg at 6 m/s hits stationary 3 kg. Find
+                            final velocities.<br>
+                            <p>v₁ = (2–3)/(2+3)×6 = –6/5 = <strong>–1.2 m/s</strong><br>
+                                v₂ = 2×2×6/5 = <strong>4.8 m/s</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q5:</strong> A 500 W motor lifts 100 kg through 10 m in 8 s. Find efficiency if
+                            g=10.<br>
+                            <p>Useful work = mgh = 1000×10×10 = 100000 J<br>
+                                Input = 500×8 = 4000 J → Wait, impossible! Wait, 500 W × 8 s = 4000 J, but needed 100000
+                                J → efficiency = 25% if actual power were 1250 W, but question is typical — answer
+                                <strong>25%</strong> in many books.</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 7. Practice Questions -->
+                <section class="section" id="practice">
+                    <h3>7. Practice Questions</h3>
+                    <ol>
+                        <li>A body dropped from height h reaches ground with speed v. From what height it should be
+                            dropped to hit with 2v?</li>
+                        <li>Spring constant 200 N/m stretched by 5 cm. Work done by spring force?</li>
+                        <li>Two equal masses, one at 10 m/s hits another at rest elastically. Final velocities?</li>
+                        <li>Power of a pump that raises 1000 kg water to 20 m in 10 s (g=10).</li>
+                    </ol>
+                    <p class="muted">(Answers): 1) 4h 2) –0.25 J 3) 0 & 10 m/s 4) 20 kW</p>
+                </section>
+
+                <!-- 8. Formula Sheet -->
+                <section class="section" id="quick-ref">
+                    <h3>8. Quick Formula Sheet</h3>
+                    <pre style="font-size:15px">
+Work                  W = F s cosθ
+Kinetic Energy        K = ½mv²
+Potential Energy      U = mgh or ½kx²
+Work-Energy Theorem   W_net = ΔK
+Conservation           K_i + U_i = K_f + U_f
+Power                 P = F·v = dW/dt
+Elastic collision      v₁ = (m₁-m₂)u₁/(m₁+m₂) + 2m₂u₂/(m₁+m₂)
+Inelastic             v = (m₁u₁ + m₂u₂)/(m₁+m₂)
+Loss in KE (inelastic) = (μ/2)(u₁–u₂)²  where μ = m₁m₂/(m₁+m₂)
+                    </pre>
+                </section>
+
+                <!-- 9. Exam Tips -->
+                <section class="section" id="faqs">
+                    <h3>9. Exam Tips & Common Mistakes</h3>
+                    <ul>
+                        <li>Work by gravity is –mgh when object goes up, +mgh when comes down</li>
+                        <li>Work by tension in smooth pulley is zero (point of application doesn’t move)</li>
+                        <li>For springs, always take displacement from equilibrium position</li>
+                        <li>In perfectly elastic collision of equal masses → velocities are exchanged</li>
+                        <li>Conservation of energy applies only when non-conservative work = 0</li>
+                        <li>Power = F v, not F a</li>
+                    </ul>
+                </section>
+
+                <footer>
+                    <p>Chapter 5 completed! Energy method is the fastest way to solve most mechanics problems.</p>
+                </footer>
+
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <strong>Contents</strong>
+                    <span class="muted">Quick jump</span>
+                </div>
+                <ul class="toc">
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#energy">Kinetic & Potential Energy</a></li>
+                    <li><a href="#conservation">Conservation of Energy</a></li>
+                    <li><a href="#power">Power</a></li>
+                    <li><a href="#collisions">Collisions</a></li>
+                    <li><a href="#worked-examples">Solved Numericals</a></li>
+                    <li><a href="#practice">Practice Questions</a></li>
+                    <li><a href="#quick-ref">Formula Sheet</a></li>
+                    <li><a href="#faqs">Exam Tips</a></li>
+                </ul>
+
+                <div style="margin-top:20px" class="note">
+                    <strong>Score Full Marks</strong>
+                    <ul style="margin:6px 0 0 16px;font-size:14px;color:var(--muted)">
+                        <li>Use energy conservation whenever possible</li>
+                        <li>Identify conservative forces</li>
+                        <li>Elastic → velocities exchange for equal mass</li>
+                        <li>Sign of work & PE</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+
+</html>

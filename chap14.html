@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class 11 Physics — Chapter 14: Waves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #9aa7bf;
+            --accent: #6ee7b7;
+            --accent-2: #7dd3fc;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-2: rgba(255, 255, 255, 0.02);
+            --mono: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #071023 120%);
+            font-family: var(--mono);
+            color: #e6eef8
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .logo {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            width: 62px;
+            height: 62px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #042;
+            font-weight: 800;
+            box-shadow: 0 6px 26px rgba(3, 6, 23, 0.6)
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0
+        }
+
+        header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 22px;
+            margin-top: 18px
+        }
+
+        article.card {
+            background: linear-gradient(180deg, var(--card), #061022 140%);
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+            overflow: hidden
+        }
+
+        h2 {
+            margin: 14px 0 8px;
+            font-size: 20px
+        }
+
+        h3 {
+            margin: 12px 0 8px;
+            font-size: 18px
+        }
+
+        p {
+            color: #d8e6fb;
+            line-height: 1.6
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 10px;
+            overflow: auto
+        }
+
+        .section {
+            padding: 12px 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.03)
+        }
+
+        .note {
+            background: linear-gradient(90deg, rgba(125, 211, 252, 0.06), rgba(110, 231, 183, 0.03));
+            border-left: 4px solid rgba(125, 211, 252, 0.18);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--muted)
+        }
+
+        .formula {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .example {
+            background: var(--glass-2);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .toc {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .toc li {
+            margin: 10px 0
+        }
+
+        .toc a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        footer {
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center
+        }
+
+        @media(max-width:980px) {
+            main {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: relative;
+                margin-top: 8px
+            }
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PH</div>
+            <div>
+                <h1>Class 11 Physics — <span style="color:var(--accent)">Chapter 14</span> — Waves</h1>
+                <p class="chapter-meta">Wave motion • speed on string • standing waves • organ pipes • beats • Doppler
+                    effect • solved numericals</p>
+            </div>
+        </header>
+
+        <main>
+            <article class="card">
+
+                <!-- Intro -->
+                <section class="section" id="intro">
+                    <h2>Chapter 14 — Waves (Last Chapter!)</h2>
+                    <p class="lead">The grand finale — 12–15 marks almost every year. Standing waves in strings & pipes
+                        + Doppler effect are absolute favourites. Memorise the frequency formulas and node-antinode
+                        positions — full marks confirmed!</p>
+                    <div class="note"><strong>Board 100 % Questions:</strong> Fundamental frequency of string/pipe,
+                        beats, Doppler (source moving, observer moving), speed of transverse wave.</div>
+                </section>
+
+                <!-- 1. Wave Basics -->
+                <section class="section" id="basics">
+                    <h3>1. Wave Equation & Speed</h3>
+                    <div class="formula" style="font-size:18px">
+                        y = A sin(kx – ωt)  or A sin(2π(x/λ – t/T))<br>
+                        Wave speed v = f λ = √(T/μ) (string)  v = √(γP/ρ) (gas)
+                    </div>
+                </section>
+
+                <!-- 2. Standing Waves on String -->
+                <section class="section" id="string">
+                    <h3>2. Standing Waves on String (Fixed Ends)</h3>
+                    <div class="formula">
+                        Fundamental  f₁ = (1/(2L)) √(T/μ)<br>
+                        nth harmonic fₙ = n f₁<br>
+                        Number of loops = n
+                    </div>
+                </section>
+
+                <!-- 3. Organ Pipes -->
+                <section class="section" id="pipes">
+                    <h3>3. Organ Pipes</h3>
+                    <pre style="font-size:15px">
+Closed pipe (one end open):
+Fundamental  f₁ = v/(4L)
+Odd harmonics only: fₙ = (2n–1) f₁
+
+Open pipe (both ends open):
+Fundamental  f₁ = v/(2L)
+All harmonics: fₙ = n f₁
+                    </pre>
+                    <div class="note">End correction ≈ 0.3d (usually ignored in boards)</div>
+                </section>
+
+                <!-- 4. Beats -->
+                <section class="section" id="beats">
+                    <h3>4. Beats</h3>
+                    <div class="formula">
+                        Beat frequency = |f₁ – f₂|
+                    </div>
+                </section>
+
+                <!-- 5. Doppler Effect -->
+                <section class="section" id="doppler">
+                    <h3>5. Doppler Effect (Most Important)</h3>
+                    <div class="formula" style="font-size:17px">
+                        f' = f (v ± vₒ)/(v ± vₛ)<br>
+                        vₒ → + if observer towards source<br>
+                        vₛ → + if source away from observer
+                    </div>
+                    <pre>
+Common cases (v << speed of sound):
+Source moving towards observer     → f' = f (v/(v – vₛ))
+Observer moving towards source     → f' = f (v + vₒ)/v
+Both moving same direction         → f' = f (v + vₒ)/(v + vₛ)
+                    </pre>
+                </section>
+
+                <!-- 6. Solved Numericals -->
+                <section class="section" id="worked-examples">
+                    <h3>6. Board Favourite Solved Numericals</h3>
+                    <div class="examples">
+
+                        <div class="example">
+                            <strong>Q1:</strong> String length 1 m, μ=0.01 kg/m, tension 100 N. Fundamental
+                            frequency?<br>
+                            <p>v = √(100/0.01)=100 m/s → f₁ = v/(2L) = 100/2 = <strong>50 Hz</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q2:</strong> Closed pipe 0.5 m. Speed of sound 340 m/s. First three frequencies?<br>
+                            <p>f₁ = 340/(4×0.5)=170 Hz → 170, 510, 850 Hz</p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q3:</strong> Two tuning forks 256 Hz and 262 Hz. Beat frequency?<br>
+                            <p>|262–256| = <strong>6 beats/sec</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q4 (Doppler):</strong> Source 500 Hz moving at 20 m/s towards stationary observer
+                            (v_sound=340 m/s).<br>
+                            <p>f' = 500 × (340/(340–20)) = 500 × 340/320 ≈ <strong>531 Hz</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q5:</strong> Open pipe resonates at 3rd harmonic 600 Hz. Length of pipe?<br>
+                            <p>fₙ = n v/(2L) → 600 = 3 × v/(2L) → L = (3×340)/(2×600) = <strong>0.85 m</strong></p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 7. Practice -->
+                <section class="section" id="practice">
+                    <h3>7. Practice Questions</h3>
+                    <ol>
+                        <li>Ratio of fundamental frequency of open to closed pipe of same length?</li>
+                        <li>A train sounding 500 Hz approaches at 36 km/h. Apparent frequency? (v=340 m/s)</li>
+                        <li>Sonometer wire frequency increases from 200 to 250 Hz when tension increased by 56%.
+                            Original tension?</li>
+                        <li>Two open pipes of length 40 cm and 41 cm. Beat frequency? (v=330 m/s)</li>
+                    </ol>
+                    <p class="muted">(Answers): 1) 2:1 2) ≈ 522 Hz 3) 2.56 times 4) ≈ 4 Hz</p>
+                </section>
+
+                <!-- 8. Formula Sheet -->
+                <section class="section" id="quick-ref">
+                    <h3>8. One-Page Formula Sheet</h3>
+                    <pre style="font-size:15px">
+Speed on string           v = √(T/μ)
+String fixed both ends    fₙ = n/(2L) √(T/μ)
+Open pipe                 fₙ = n v/(2L)
+Closed pipe               fₙ = (2n–1) v/(4L)
+Beats                     |f₁ – f₂|
+Doppler                   f' = f (v ± vₒ)/(v ± vₛ)
+Wave equation             y = A sin 2π(x/λ – t/T)
+Transverse wave speed     v = √(T/μ)
+Longitudinal (sound)      v = √(γP/ρ) = √(γRT/M)
+                    </pre>
+                </section>
+
+                <footer>
+                    <p>Chapter 14 done bhai! Class 11 Physics complete. Ab toh full syllabus revision ho gaya.
+                        Party ab officially over — lekin topper banne ka safar ab shuru hota hai!</p>
+                </footer>
+
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <strong>Contents</strong>
+                    <span class="muted">Jump</span>
+                </div>
+                <ul class="toc">
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#basics">Wave Equation</a></li>
+                    <li><a href="#string">String Waves</a></li>
+                    <li><a href="#pipes">Organ Pipes</a></li>
+                    <li><a href="#beats">Beats</a></li>
+                    <li><a href="#doppler">Doppler Effect</a></li>
+                    <li><a href="#worked-examples">Solved Numericals</a></li>
+                    <li><a href="#practice">Practice Set</a></li>
+                    <li><a href="#quick-ref">Formula Sheet</a></li>
+                </ul>
+
+                <div style="margin-top:20px" class="note">
+                    <strong>Score 15/15 Checklist</strong>
+                    <ul style="margin:6px 0 0 16px;font-size:14px;color:var(--muted)">
+                        <li>String: n/(2L)</li>
+                        <li>Closed: odd harmonics</li>
+                        <li>Doppler signs</li>
+                        <li>v = fλ</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+
+</html>

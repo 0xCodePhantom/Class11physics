@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class 11 Physics — Chapter 4: Laws of Motion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #9aa7bf;
+            --accent: #6ee7b7;
+            --accent-2: #7dd3fc;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-2: rgba(255, 255, 255, 0.02);
+            --radius: 16px;
+            --mono: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #071023 120%);
+            font-family: var(--mono);
+            color: #e6eef8
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .logo {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            width: 62px;
+            height: 62px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #042;
+            font-weight: 800;
+            box-shadow: 0 6px 26px rgba(3, 6, 23, 0.6)
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0
+        }
+
+        header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 22px;
+            margin-top: 18px
+        }
+        }
+
+        article.card {
+            background: linear-gradient(180deg, var(--card), #061022 140%);
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+            overflow: hidden
+        }
+
+        h2 {
+            margin: 14px 0 8px;
+            font-size: 20px
+        }
+
+        h3 {
+            margin: 12px 0 8px;
+            font-size: 18px
+        }
+
+        p {
+            color: #d8e6fb;
+            line-height: 1.6
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 10px;
+            overflow: auto
+        }
+
+        .section {
+            padding: 12px 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.03)
+        }
+
+        .note {
+            background: linear-gradient(90deg, rgba(125, 211, 252, 0.06), rgba(110, 231, 183, 0.03));
+            border-left: 4px solid rgba(125, 211, 252, 0.18);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--muted)
+        }
+
+        .formula {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .example {
+            background: var(--glass-2);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .toc {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .toc li {
+            margin: 10px 0
+        }
+
+        .toc a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        footer {
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center
+        }
+
+        @media (max-width:980px) {
+            main {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: relative;
+                margin-top: 8px
+            }
+        }
+
+        .kbd {
+            background: #031225;
+            padding: 6px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-weight: 700
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PH</div>
+            <div>
+                <h1>Class 11 Physics — <span style="color:var(--accent)">Chapter 4</span> — Laws of Motion</h1>
+                <p class="chapter-meta">Newton’s laws • force • free-body diagram • tension • pulley systems • friction
+                    • pseudo force • solved numericals</p>
+            </div>
+        </header>
+
+        <main>
+            <article class="card">
+
+                <!-- Intro -->
+                <section class="section" id="intro">
+                    <h2>Introduction — Dynamics Begins Here</h2>
+                    <p class="lead">Chapter 4 introduces the concept of force and Newton’s three laws of motion — the
+                        foundation of classical mechanics. This chapter is extremely important for both theory (10–12
+                        marks) and numericals (pulleys, inclined plane, friction).</p>
+
+                    <div class="note">
+                        <strong>Most Important Skill:</strong> Drawing accurate Free-Body Diagrams (FBD). 90 % of
+                        mistakes happen because of wrong FBD.
+                    </div>
+                </section>
+
+                <!-- 1. Newton’s Laws -->
+                <section class="section" id="newton">
+                    <h3>1. Newton’s Three Laws of Motion</h3>
+                    <pre>
+1st Law (Inertia)   → Body continues in its state of rest or uniform motion unless acted upon by net external force.
+
+2nd Law             → F⃗_net = m a⃗      (F = dp/dt in general)
+
+3rd Law             → Every action has equal and opposite reaction.
+                    </pre>
+
+                    <div class="formula">Momentum p = m v<br>
+                        Impulse J = Δp = F Δt</div>
+                </section>
+
+                <!-- 2. Types of Forces -->
+                <section class="section" id="forces">
+                    <h3>2. Common Forces You Must Know</h3>
+                    <pre>
+Weight                → mg (downward)
+Normal force          → N or R (perpendicular to surface)
+Tension               → T (along string, same magnitude on both sides in ideal string)
+Friction (static)     → fₛ ≤ μₛ N
+Friction (kinetic)    → fₖ = μₖ N
+Pseudo force          → –m a⃗ (in non-inertial frame)
+                    </pre>
+                </section>
+
+                <!-- 3. Constraint Motion & Pulleys -->
+                <section class="section" id="pulleys">
+                    <h3>3. Constraint Relations (Pulley Systems)</h3>
+                    <div class="formula">
+                        For fixed pulley: a₁ = a₂ (magnitude)<br>
+                        For movable pulley: a₁ = 2 a₂<br>
+                        Atwood machine: a = (m₁ – m₂)g / (m₁ + m₂)<br>
+                        Tension T = 2 m₁ m₂ g / (m₁ + m₂)
+                    </div>
+                </section>
+
+                <!-- 4. Friction -->
+                <section class="section" id="friction">
+                    <h3>4. Friction — Static & Kinetic</h3>
+                    <pre>
+Limiting friction    f_max = μₛ N
+Kinetic friction     fₖ = μₖ N  (μₖ < μₛ)
+Angle of repose      θ = tan⁻¹ μₛ
+Minimum force to move block on rough surface at angle α:
+F_min = μ N / (1 + μ tanα)  when applied at angle α with horizontal
+                    </pre>
+                </section>
+
+                <!-- 5. Circular Motion Dynamics -->
+                <section class="section" id="circular">
+                    <h3>5. Forces in Circular Motion</h3>
+                    <pre>
+Banking of roads:    tanθ = v² / (r g)
+Vehicle on convex bridge:  N = mg – mv²/r (at top)
+Vehicle on concave bridge: N = mg + mv²/r
+                    </pre>
+                </section>
+
+                <!-- 6. Solved Numericals -->
+                <section class="section" id="worked-examples">
+                    <h3>6. High-Weightage Solved Numericals</h3>
+
+                    <div class="examples">
+
+                        <div class="example">
+                            <strong>Q1:</strong> Two masses 5 kg and 3 kg connected by string over pulley. Find
+                            acceleration and tension (g=10 m/s²).<br>
+                            <p>a = (5–3)/(5+3)g = 2g/8 = <strong>2.5 m/s²</strong><br>
+                                T = 2×5×3×10 / 8 = <strong>37.5 N</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q2:</strong> 10 kg block on surface μ = 0.3. Minimum force to just move it?<br>
+                            <p>F = μ mg = 0.3 × 10 × 10 = <strong>30 N</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q3:</strong> Block 4 kg on 37° incline (tan37°=3/4=0.75, μ=0.2). Will it slide
+                            down?<br>
+                            <p>Component down plane = mg sin37° = 40 × 0.6 = 24 N<br>
+                                Max friction = μ N = 0.2 × 40 × 0.8 = 6.4 N<br>
+                                24 N > 6.4 N ⇒ <strong>yes, it slides down</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q4:</strong> Car of mass 1000 kg moves at 54 km/h on a level road with μ=0.5.
+                            Braking distance?<br>
+                            <p>v = 15 m/s, a = –μg = –5 m/s²<br>
+                                v² = u² + 2as ⇒ 0 = 225 – 10 s ⇒ s = <strong>22.5 m</strong></p>
+                        </div>
+
+                        <div class="example">
+                            <strong>Q5 (Pseudo force):</strong> Lift accelerating upward at 2 m/s² with 60 kg man.
+                            Apparent weight?<br>
+                            <p>N – mg = ma ⇒ N = m(g+a) = 60(10+2) = <strong>720 N</strong></p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 7. Practice Questions -->
+                <section class="section" id="practice">
+                    <h3>7. Practice Questions (Exam Favourite)</h3>
+                    <ol>
+                        <li>Two masses 8 kg and 2 kg are connected. Find acceleration and tension.</li>
+                        <li>A 5 kg block is pulled by 20 N at 30° to horizontal (μ=0.2). Find acceleration.</li>
+                        <li>Find angle of banking for safe turn (v=72 km/h, r=200 m, μ=0).</li>
+                        <li>A monkey of 20 kg climbs a rope that can withstand 300 N. Max acceleration upward?</li>
+                    </ol>
+
+                    <p class="muted">(Answers): 1) a=6 m/s², T=32 N 2) 1.4 m/s² 3) ≈37° 4) 5 m/s²</p>
+                </section>
+
+                <!-- 8. Quick Formula Sheet -->
+                <section class="section" id="quick-ref">
+                    <h3>8. Formula Sheet — Memorize These</h3>
+                    <pre style="font-size:15px">
+Atwood:     a = (m₁-m₂)g/(m₁+m₂)  T = 2m₁m₂g/(m₁+m₂)
+
+Incline:   Down plane → mg sinθ – friction
+           Up plane   → applied – mg sinθ – friction
+
+Friction:  fₛ ≤ μₛ N  fₖ = μₖ N
+
+Banking:   tanθ = v²/(rg)
+
+Pseudo force (accelerating frame): F_pseudo = –m a_frame
+
+Apparent weight in lift:
+Accelerating up   → m(g+a)
+Accelerating down → m(g–a)
+Free fall         → 0
+                    </pre>
+                </section>
+
+                <!-- 9. Exam Tips -->
+                <section class="section" id="faqs">
+                    <h3>9. Exam Tips & Common Mistakes</h3>
+                    <ul>
+                        <li>Always draw FBD for each body separately</li>
+                        <li>Tension is same throughout ideal string</li>
+                        <li>In pulley, movable pulley has acceleration half of the string acceleration</li>
+                        <li>For banking, no friction → tanθ = v²/rg</li>
+                        <li>Pseudo force is always opposite to acceleration of frame</li>
+                        <li>Normal force N ≤ mg cosθ on incline</li>
+                    </ul>
+                </section>
+
+                <footer>
+                    <p>Chapter 4 completed! Master FBD and pulley constraint relations → you’ll score full marks in
+                        dynamics.</p>
+                </footer>
+
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <strong>Contents</strong>
+                    <span class="muted">Quick jump</span>
+                </div>
+                <ul class="toc">
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#newton">Newton’s Laws</a></li>
+                    <li><a href="#forces">Common Forces</a></li>
+                    <li><a href="#pulleys">Pulley & Constraint</a></li>
+                    <li><a href="#friction">Friction</a></li>
+                    <li><a href="#circular">Circular Motion Forces</a></li>
+                    <li><a href="#worked-examples">Solved Numericals</a></li>
+                    <li><a href="#practice">Practice Set</a></li>
+                    <li><a href="#quick-ref">Formula Sheet</a></li>
+                    <li><a href="#faqs">Exam Tips</a></li>
+                </ul>
+
+                <div style="margin-top:20px" class="note">
+                    <strong>Score 100 % Checklist</strong>
+                    <ul style="margin:6px 0 0 16px;font-size:14px;color:var(--muted)">
+                        <li>Correct FBD</li>
+                        <li>Constraint relation</li>
+                        <li>Pseudo force direction</li>
+                        <li>Sign convention</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+
+</html>
